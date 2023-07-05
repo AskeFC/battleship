@@ -4,11 +4,11 @@
  * Module dependencies.
  */
 
-import "dotenv/config";
-import http from "http";
+import 'dotenv/config';
+import http from 'http';
 
-import app from "#frontend-server/app";
-import gameWSSServer from "#game-server/app";
+import app from '#frontend-server/app';
+import gameWSSServer from '#game-server/app';
 /**
  * Get port from environment and store in Express.
  */
@@ -83,8 +83,7 @@ const onError = (error) => {
 
 const onListening = () => {
     const addr = server.address();
-    const bind =
-        typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+    const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
     console.log("Listening on " + bind);
     console.log("Press Ctrl+C to stop server.");
 };
