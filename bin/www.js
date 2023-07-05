@@ -50,8 +50,6 @@ const gameWSS = gameWSSServer(server);
  */
 
 server.listen(port, "0.0.0.0");
-server.on("error", onError);
-server.on("listening", onListening);
 
 /**
  * Event listener for HTTP server "error" event.
@@ -89,3 +87,6 @@ const onListening = () => {
     console.log("Listening on " + bind);
     console.log("Press Ctrl+C to stop server.");
 };
+
+server.on("error", onError);
+server.on("listening", onListening);
