@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 'use strict';
+
 /**
  * Module dependencies.
  */
@@ -9,6 +10,27 @@ import http from 'http';
 
 import app from '#frontend-server/app';
 import gameWSSServer from '#game-server/app';
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+const normalizePort = (val) => {
+    const port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    };
+
+    if (port >= 0) {
+        // port number
+        return port;
+    };
+
+    return false;
+};
+
 /**
  * Get port from environment and store in Express.
  */
@@ -30,26 +52,6 @@ const gameWSS = gameWSSServer(server);
 server.listen(port, "0.0.0.0");
 server.on("error", onError);
 server.on("listening", onListening);
-
-/**
- * Normalize a port into a number, string, or false.
- */
-
-const normalizePort = (val) => {
-    const port = parseInt(val, 10);
-
-    if (isNaN(port)) {
-        // named pipe
-        return val;
-    };
-
-    if (port >= 0) {
-        // port number
-        return port;
-    };
-
-    return false;
-};
 
 /**
  * Event listener for HTTP server "error" event.
