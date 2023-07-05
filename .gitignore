@@ -8,3 +8,4 @@ node_modules/
 !/logs/.gitignore
 
 docs/.vuepress/dist
+/nbproject/private/
