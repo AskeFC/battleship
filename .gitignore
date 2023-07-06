@@ -11,3 +11,4 @@ docs/.vuepress/dist
 
 .idea
 nbproject
+package-lock.json
